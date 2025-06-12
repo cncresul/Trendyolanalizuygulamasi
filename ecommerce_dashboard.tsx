@@ -8,9 +8,9 @@ const EcommerceDashboard = () => {
   const [selectedTimeRange, setSelectedTimeRange] = useState('month');
   const [lastUpdated, setLastUpdated] = useState(new Date());
 
-  // Trendyol'dan çekilen gerçek veri yapısını simüle ediyor
+ 
   const generateMockData = () => {
-    // Trendyol'un gerçek ana kategorileri
+
     const categories = ['Kadın', 'Erkek', 'Elektronik', 'Ev & Mobilya', 'Kozmetik', 'Süpermarket', 'Anne & Bebek', 'Spor & Outdoor'];
     const months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'];
     
@@ -36,7 +36,7 @@ const EcommerceDashboard = () => {
         volume: Math.floor(Math.random() * 10000) + 1000
       })),
       
-      // Trendyol'dan elde edilen gerçek popüler ürünler
+      
       socialTrends: [
         { product: 'Bluetooth Kulaklık', mentions: 48000, sentiment: 0.9 },
         { product: 'Telefon Kılıfı', mentions: 42000, sentiment: 0.8 },
@@ -56,12 +56,12 @@ const EcommerceDashboard = () => {
 
   const [data, setData] = useState(generateMockData());
 
-  // Canlı güncelleme simülasyonu
+
   useEffect(() => {
     const interval = setInterval(() => {
       setData(generateMockData());
       setLastUpdated(new Date());
-    }, 30000); // 30 saniyede bir güncelle
+    }, 30000); 
 
     return () => clearInterval(interval);
   }, []);
